@@ -1,17 +1,17 @@
 {
 	"schema_version": "1.4.0",
-	"id": "GHSA-w3j5-q8f2-3cqq",
-	"modified": "2023-12-08T22:45:01Z",
-	"published": "2022-05-14T01:10:16Z",
+	"id": "GHSA-3mjp-p938-4329",
+	"modified": "2023-12-08T21:59:22Z",
+	"published": "2022-05-13T01:02:16Z",
 	"aliases": [
-		"CVE-2016-8745"
+		"CVE-2016-6796"
 	],
-	"summary": "Concurrent Execution using Shared Resource with Improper Synchronization in Apache Tomcat",
-	"details": "A bug in the error handling of the send file code for the NIO HTTP connector in Apache Tomcat 9.0.0.M1 to 9.0.0.M13, 8.5.0 to 8.5.8, 8.0.0.RC1 to 8.0.39, 7.0.0 to 7.0.73 and 6.0.16 to 6.0.48 resulted in the current Processor object being added to the Processor cache multiple times. This in turn meant that the same Processor could be used for concurrent requests. Sharing a Processor can result in information leakage between requests including, not not limited to, session ID and the response body. The bug was first noticed in 8.5.x onwards where it appears the refactoring of the Connector code for 8.5.x onwards made it more likely that the bug was observed. Initially it was thought that the 8.5.x refactoring introduced the bug but further investigation has shown that the bug is present in all currently supported Tomcat versions.",
+	"summary": "Apache Tomcat vulnerable to SecurityManager bypass",
+	"details": "A malicious web application running on Apache Tomcat 9.0.0.M1 to 9.0.0.M9, 8.5.0 to 8.5.4, 8.0.0.RC1 to 8.0.36, 7.0.0 to 7.0.70 and 6.0.0 to 6.0.45 was able to bypass a configured SecurityManager via manipulation of the configuration parameters for the JSP Servlet.",
 	"severity": [
 		{
 			"type": "CVSS_V3",
-			"score": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+			"score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
 		}
 	],
 	"affected": [
@@ -28,13 +28,13 @@
 							"introduced": "9.0.0.M1"
 						},
 						{
-							"fixed": "9.0.0.M14"
+							"fixed": "9.0.0.M10"
 						}
 					]
 				}
 			],
 			"database_specific": {
-				"last_known_affected_version_range": "<= 9.0.0.M13"
+				"last_known_affected_version_range": "<= 9.0.0.M9"
 			}
 		},
 		{
@@ -50,13 +50,13 @@
 							"introduced": "8.5.0"
 						},
 						{
-							"fixed": "8.5.9"
+							"fixed": "8.5.5"
 						}
 					]
 				}
 			],
 			"database_specific": {
-				"last_known_affected_version_range": "<= 8.5.8"
+				"last_known_affected_version_range": "<= 8.5.4"
 			}
 		},
 		{
@@ -69,14 +69,17 @@
 					"type": "ECOSYSTEM",
 					"events": [
 						{
-							"introduced": "8.0.0RC1"
+							"introduced": "8.0.0.RC1"
 						},
 						{
-							"fixed": "8.0.41"
+							"fixed": "8.0.37"
 						}
 					]
 				}
-			]
+			],
+			"database_specific": {
+				"last_known_affected_version_range": "<= 8.0.36"
+			}
 		},
 		{
 			"package": {
@@ -91,11 +94,14 @@
 							"introduced": "7.0.0"
 						},
 						{
-							"fixed": "7.0.75"
+							"fixed": "7.0.71"
 						}
 					]
 				}
-			]
+			],
+			"database_specific": {
+				"last_known_affected_version_range": "<= 7.0.70"
+			}
 		},
 		{
 			"package": {
@@ -107,20 +113,23 @@
 					"type": "ECOSYSTEM",
 					"events": [
 						{
-							"introduced": "6.0.16"
+							"introduced": "6.0.0"
 						},
 						{
-							"fixed": "6.0.50"
+							"fixed": "6.0.46"
 						}
 					]
 				}
-			]
+			],
+			"database_specific": {
+				"last_known_affected_version_range": "<= 6.0.45"
+			}
 		}
 	],
 	"references": [
 		{
 			"type": "ADVISORY",
-			"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8745"
+			"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-6796"
 		},
 		{
 			"type": "WEB",
@@ -132,7 +141,23 @@
 		},
 		{
 			"type": "WEB",
-			"url": "https://access.redhat.com/errata/RHSA-2017:0935"
+			"url": "https://access.redhat.com/errata/RHSA-2017:1548"
+		},
+		{
+			"type": "WEB",
+			"url": "https://access.redhat.com/errata/RHSA-2017:1549"
+		},
+		{
+			"type": "WEB",
+			"url": "https://access.redhat.com/errata/RHSA-2017:1550"
+		},
+		{
+			"type": "WEB",
+			"url": "https://access.redhat.com/errata/RHSA-2017:1552"
+		},
+		{
+			"type": "WEB",
+			"url": "https://access.redhat.com/errata/RHSA-2017:2247"
 		},
 		{
 			"type": "PACKAGE",
@@ -180,11 +205,11 @@
 		},
 		{
 			"type": "WEB",
-			"url": "https://lists.apache.org/thread.html/4113c05d37f37c12b8033205684f04033c5f7a9bae117d4af23b32b4%40%3Cannounce.tomcat.apache.org%3E"
+			"url": "https://lists.apache.org/thread.html/5a2105a56b2495ab70fa568f06925bd861f0d71ffab4fb38bb4fdc45%40%3Cannounce.tomcat.apache.org%3E"
 		},
 		{
 			"type": "WEB",
-			"url": "https://lists.apache.org/thread.html/4113c05d37f37c12b8033205684f04033c5f7a9bae117d4af23b32b4@%3Cannounce.tomcat.apache.org%3E"
+			"url": "https://lists.apache.org/thread.html/5a2105a56b2495ab70fa568f06925bd861f0d71ffab4fb38bb4fdc45@%3Cannounce.tomcat.apache.org%3E"
 		},
 		{
 			"type": "WEB",
@@ -244,22 +269,6 @@
 		},
 		{
 			"type": "WEB",
-			"url": "https://lists.apache.org/thread.html/r3bbb800a816d0a51eccc5a228c58736960a9fffafa581a225834d97d%40%3Cdev.tomcat.apache.org%3E"
-		},
-		{
-			"type": "WEB",
-			"url": "https://lists.apache.org/thread.html/r3bbb800a816d0a51eccc5a228c58736960a9fffafa581a225834d97d@%3Cdev.tomcat.apache.org%3E"
-		},
-		{
-			"type": "WEB",
-			"url": "https://lists.apache.org/thread.html/r48c1444845fe15a823e1374674bfc297d5008a5453788099ea14caf0%40%3Cdev.tomcat.apache.org%3E"
-		},
-		{
-			"type": "WEB",
-			"url": "https://lists.apache.org/thread.html/r48c1444845fe15a823e1374674bfc297d5008a5453788099ea14caf0@%3Cdev.tomcat.apache.org%3E"
-		},
-		{
-			"type": "WEB",
 			"url": "https://lists.apache.org/thread.html/r587e50b86c1a96ee301f751d50294072d142fd6dc08a8987ae9f3a9b%40%3Cdev.tomcat.apache.org%3E"
 		},
 		{
@@ -276,19 +285,27 @@
 		},
 		{
 			"type": "WEB",
-			"url": "https://security.gentoo.org/glsa/201705-09"
+			"url": "https://security.netapp.com/advisory/ntap-20180605-0001/"
 		},
 		{
 			"type": "WEB",
-			"url": "https://security.netapp.com/advisory/ntap-20180607-0002/"
+			"url": "https://usn.ubuntu.com/4557-1/"
 		},
 		{
 			"type": "WEB",
-			"url": "https://web.archive.org/web/20200227165932/http://www.securityfocus.com/bid/94828"
+			"url": "https://web.archive.org/web/20161029105733/http://www.securityfocus.com/bid/93944"
 		},
 		{
 			"type": "WEB",
-			"url": "https://web.archive.org/web/20200517114357/http://www.securitytracker.com/id/1037432"
+			"url": "https://web.archive.org/web/20161103080055/http://www.securitytracker.com/id/1037141"
+		},
+		{
+			"type": "WEB",
+			"url": "https://web.archive.org/web/20171012232225/http://www.securitytracker.com/id/1038757"
+		},
+		{
+			"type": "WEB",
+			"url": "https://www.oracle.com/security-alerts/cpuoct2021.html"
 		},
 		{
 			"type": "WEB",
@@ -296,32 +313,18 @@
 		},
 		{
 			"type": "WEB",
-			"url": "http://rhn.redhat.com/errata/RHSA-2017-0527.html"
+			"url": "http://rhn.redhat.com/errata/RHSA-2017-1551.html"
 		},
 		{
 			"type": "WEB",
-			"url": "http://www.debian.org/security/2017/dsa-3754"
-		},
-		{
-			"type": "WEB",
-			"url": "http://www.debian.org/security/2017/dsa-3755"
-		},
-		{
-			"type": "WEB",
-			"url": "http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html"
-		},
-		{
-			"type": "WEB",
-			"url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html"
+			"url": "http://www.debian.org/security/2016/dsa-3720"
 		}
 	],
 	"database_specific": {
-		"cwe_ids": [
-			"CWE-362"
-		],
+		"cwe_ids": [],
 		"github_reviewed": true,
-		"github_reviewed_at": "2022-07-06T19:48:38Z",
-		"nvd_published_at": "2017-08-10T22:29:00Z",
+		"github_reviewed_at": "2023-12-08T21:59:22Z",
+		"nvd_published_at": "2017-08-11T02:29:00Z",
 		"severity": "HIGH"
 	}
 }

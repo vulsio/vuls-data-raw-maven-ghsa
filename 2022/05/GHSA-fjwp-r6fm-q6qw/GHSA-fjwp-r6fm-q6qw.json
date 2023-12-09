@@ -1,17 +1,17 @@
 {
 	"schema_version": "1.4.0",
-	"id": "GHSA-9hg2-395j-83rm",
-	"modified": "2023-12-08T22:34:13Z",
-	"published": "2022-05-13T01:46:13Z",
+	"id": "GHSA-fjwp-r6fm-q6qw",
+	"modified": "2023-12-08T22:35:57Z",
+	"published": "2022-05-14T01:10:15Z",
 	"aliases": [
-		"CVE-2017-5651"
+		"CVE-2016-8747"
 	],
-	"summary": "Expected Behavior Violation in Apache Tomcat",
-	"details": "In Apache Tomcat 9.0.0.M1 to 9.0.0.M18 and 8.5.0 to 8.5.12, the refactoring of the HTTP connectors introduced a regression in the send file processing. If the send file processing completed quickly, it was possible for the Processor to be added to the processor cache twice. This could result in the same Processor being used for multiple requests which in turn could lead to unexpected errors and/or response mix-up.",
+	"summary": "Apache Tomcat allows remote attackers to read data that was intended to be associated with a different request",
+	"details": "An information disclosure issue was discovered in Apache Tomcat 8.5.7 to 8.5.9 and 9.0.0.M11 to 9.0.0.M15 in reverse-proxy configurations. Http11InputBuffer.java allows remote attackers to read data that was intended to be associated with a different request.",
 	"severity": [
 		{
 			"type": "CVSS_V3",
-			"score": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+			"score": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
 		}
 	],
 	"affected": [
@@ -25,16 +25,16 @@
 					"type": "ECOSYSTEM",
 					"events": [
 						{
-							"introduced": "9.0.0.M1"
+							"introduced": "8.5.7"
 						},
 						{
-							"fixed": "9.0.0.M19"
+							"fixed": "8.5.10"
 						}
 					]
 				}
 			],
 			"database_specific": {
-				"last_known_affected_version_range": "<= 9.0.0.M18"
+				"last_known_affected_version_range": "<= 8.5.9"
 			}
 		},
 		{
@@ -47,27 +47,23 @@
 					"type": "ECOSYSTEM",
 					"events": [
 						{
-							"introduced": "8.5.0"
+							"introduced": "9.0.0.M11"
 						},
 						{
-							"fixed": "8.5.13"
+							"fixed": "9.0.0.M16"
 						}
 					]
 				}
 			],
 			"database_specific": {
-				"last_known_affected_version_range": "<= 8.5.12"
+				"last_known_affected_version_range": "<= 9.0.0.M15"
 			}
 		}
 	],
 	"references": [
 		{
 			"type": "ADVISORY",
-			"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-5651"
-		},
-		{
-			"type": "WEB",
-			"url": "https://bz.apache.org/bugzilla/show_bug.cgi?id=60918"
+			"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8747"
 		},
 		{
 			"type": "PACKAGE",
@@ -80,22 +76,6 @@
 		{
 			"type": "WEB",
 			"url": "https://lists.apache.org/thread.html/343558d982879bf88ec20dbf707f8c11255f8e219e81d45c4f8d0551@%3Cdev.tomcat.apache.org%3E"
-		},
-		{
-			"type": "WEB",
-			"url": "https://lists.apache.org/thread.html/5c0e00fd31efc11e147bf99d0f03c00a734447d3b131ab0818644cdb%40%3Cdev.tomcat.apache.org%3E"
-		},
-		{
-			"type": "WEB",
-			"url": "https://lists.apache.org/thread.html/5c0e00fd31efc11e147bf99d0f03c00a734447d3b131ab0818644cdb@%3Cdev.tomcat.apache.org%3E"
-		},
-		{
-			"type": "WEB",
-			"url": "https://lists.apache.org/thread.html/6694538826b87522fb723d2dcedd537e14ebe0a381d92e5525a531d8%40%3Cannounce.tomcat.apache.org%3E"
-		},
-		{
-			"type": "WEB",
-			"url": "https://lists.apache.org/thread.html/6694538826b87522fb723d2dcedd537e14ebe0a381d92e5525a531d8@%3Cannounce.tomcat.apache.org%3E"
 		},
 		{
 			"type": "WEB",
@@ -123,14 +103,6 @@
 		},
 		{
 			"type": "WEB",
-			"url": "https://lists.apache.org/thread.html/eb6efa8d59c45a7a9eff94c4b925467d3b3fec8ba7697f3daa314b04%40%3Cdev.tomcat.apache.org%3E"
-		},
-		{
-			"type": "WEB",
-			"url": "https://lists.apache.org/thread.html/eb6efa8d59c45a7a9eff94c4b925467d3b3fec8ba7697f3daa314b04@%3Cdev.tomcat.apache.org%3E"
-		},
-		{
-			"type": "WEB",
 			"url": "https://lists.apache.org/thread.html/r3bbb800a816d0a51eccc5a228c58736960a9fffafa581a225834d97d%40%3Cdev.tomcat.apache.org%3E"
 		},
 		{
@@ -147,32 +119,36 @@
 		},
 		{
 			"type": "WEB",
-			"url": "https://security.gentoo.org/glsa/201705-09"
+			"url": "https://security.netapp.com/advisory/ntap-20180614-0002/"
 		},
 		{
 			"type": "WEB",
-			"url": "https://security.netapp.com/advisory/ntap-20180614-0001/"
+			"url": "https://web.archive.org/web/20200227183332/http://www.securityfocus.com/bid/96895"
 		},
 		{
 			"type": "WEB",
-			"url": "https://web.archive.org/web/20170417124228/http://www.securityfocus.com/bid/97544"
+			"url": "http://svn.apache.org/viewvc?view=revision&revision=1774161"
 		},
 		{
 			"type": "WEB",
-			"url": "https://web.archive.org/web/20170420113605/http://www.securitytracker.com/id/1038219"
+			"url": "http://svn.apache.org/viewvc?view=revision&revision=1774166"
 		},
 		{
 			"type": "WEB",
-			"url": "http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html"
+			"url": "http://tomcat.apache.org/security-8.html"
+		},
+		{
+			"type": "WEB",
+			"url": "http://tomcat.apache.org/security-9.html"
 		}
 	],
 	"database_specific": {
 		"cwe_ids": [
-			"CWE-440"
+			"CWE-200"
 		],
 		"github_reviewed": true,
-		"github_reviewed_at": "2022-07-01T13:44:41Z",
-		"nvd_published_at": "2017-04-17T16:59:00Z",
-		"severity": "CRITICAL"
+		"github_reviewed_at": "2023-12-08T22:35:57Z",
+		"nvd_published_at": "2017-03-14T09:59:00Z",
+		"severity": "HIGH"
 	}
 }
