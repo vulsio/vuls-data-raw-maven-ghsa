@@ -49,6 +49,10 @@
 		},
 		{
 			"type": "WEB",
+			"url": "https://github.com/pypa/advisory-database/tree/main/vulns/apache-iotdb/PYSEC-2024-11.yaml"
+		},
+		{
+			"type": "WEB",
 			"url": "https://lists.apache.org/thread/293b4ob65ftnfwyf62fb9zh8gwdy38hg"
 		},
 		{
