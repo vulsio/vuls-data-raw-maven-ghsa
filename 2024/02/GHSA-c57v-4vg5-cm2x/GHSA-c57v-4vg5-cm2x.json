@@ -113,7 +113,8 @@
 	],
 	"database_specific": {
 		"cwe_ids": [
-			"CWE-200"
+			"CWE-200",
+			"CWE-203"
 		],
 		"github_reviewed": true,
 		"github_reviewed_at": "2024-02-07T18:23:31Z",
