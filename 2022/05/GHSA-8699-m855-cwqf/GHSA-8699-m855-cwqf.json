@@ -36,7 +36,7 @@
 		},
 		{
 			"type": "WEB",
-			"url": "https://www.elastic.co/community/security/"
+			"url": "https://www.elastic.co/community/security"
 		},
 		{
 			"type": "WEB",
@@ -44,7 +44,7 @@
 		},
 		{
 			"type": "WEB",
-			"url": "http://www.elasticsearch.org/blog/elasticsearch-1-4-0-beta-released/"
+			"url": "http://www.elasticsearch.org/blog/elasticsearch-1-4-0-beta-released"
 		},
 		{
 			"type": "WEB",
