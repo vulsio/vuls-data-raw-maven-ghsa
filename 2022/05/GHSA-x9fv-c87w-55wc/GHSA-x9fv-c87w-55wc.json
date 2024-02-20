@@ -119,8 +119,8 @@
 			"url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/87542"
 		},
 		{
-			"type": "PACKAGE",
-			"url": "https://github.com/apache/camel/"
+			"type": "WEB",
+			"url": "https://github.com/apache/camel"
 		},
 		{
 			"type": "WEB",
@@ -148,7 +148,7 @@
 		},
 		{
 			"type": "WEB",
-			"url": "http://packetstormsecurity.com/files/123454/"
+			"url": "http://packetstormsecurity.com/files/123454"
 		},
 		{
 			"type": "WEB",
