@@ -1,7 +1,7 @@
 {
 	"schema_version": "1.4.0",
 	"id": "GHSA-hhwc-gh8h-9rrp",
-	"modified": "2024-07-12T21:00:43Z",
+	"modified": "2024-07-18T15:19:40Z",
 	"published": "2024-07-12T15:31:26Z",
 	"aliases": [
 		"CVE-2024-36522"
@@ -12,7 +12,7 @@
 		{
 			"package": {
 				"ecosystem": "Maven",
-				"name": "org.apache.wicket:wicket-core"
+				"name": "org.apache.wicket:wicket-util"
 			},
 			"ranges": [
 				{
@@ -31,7 +31,7 @@
 		{
 			"package": {
 				"ecosystem": "Maven",
-				"name": "org.apache.wicket:wicket-core"
+				"name": "org.apache.wicket:wicket-util"
 			},
 			"ranges": [
 				{
@@ -50,7 +50,7 @@
 		{
 			"package": {
 				"ecosystem": "Maven",
-				"name": "org.apache.wicket:wicket-core"
+				"name": "org.apache.wicket:wicket-util"
 			},
 			"ranges": [
 				{
