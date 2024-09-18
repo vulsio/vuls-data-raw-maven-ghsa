@@ -64,7 +64,8 @@
 	"database_specific": {
 		"cwe_ids": [
 			"CWE-285",
-			"CWE-287"
+			"CWE-287",
+			"CWE-520"
 		],
 		"github_reviewed": true,
 		"github_reviewed_at": "2024-09-16T20:16:16Z",
