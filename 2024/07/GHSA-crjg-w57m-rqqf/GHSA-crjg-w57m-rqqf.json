@@ -1,7 +1,7 @@
 {
 	"schema_version": "1.4.0",
 	"id": "GHSA-crjg-w57m-rqqf",
-	"modified": "2024-09-11T21:02:19Z",
+	"modified": "2024-11-18T16:26:55Z",
 	"published": "2024-07-22T17:30:19Z",
 	"summary": "DNSJava vulnerable to KeyTrap - Denial-of-Service Algorithmic Complexity Attacks",
 	"details": "### Impact\nUsers using the `ValidatingResolver` for DNSSEC validation can run into CPU exhaustion with specially crafted DNSSEC-signed zones.\n\n### Patches\nUsers should upgrade to dnsjava v3.6.0\n\n### Workarounds\nAlthough not recommended, only using a non-validating resolver, will remove the vulnerability. \n\n### References\nhttps://www.athene-center.de/en/keytrap\n",
@@ -88,6 +88,6 @@
 		"github_reviewed": true,
 		"github_reviewed_at": "2024-07-22T17:30:19Z",
 		"nvd_published_at": null,
-		"severity": "MODERATE"
+		"severity": "HIGH"
 	}
 }
